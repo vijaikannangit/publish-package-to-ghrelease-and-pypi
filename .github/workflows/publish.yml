@@ -3,15 +3,20 @@ on:
   release:
     types: [published]
 jobs:
-  pypi:
+  gha-release-and-pypi-release:
     runs-on: ubuntu-latest
+    permissions:
+      id-token: write  # IMPORTANT: this permission is mandatory for trusted publishing
+
     steps:
       - name: Checkout
         uses: actions/checkout@v3
         with:
           fetch-depth: 0
       - run: python3 -m pip install --upgrade build && python3 -m build
-      - name: Publish package
+      - name: Publish distribution(package) to PyPI
         uses: pypa/gh-action-pypi-publish@release/v1
         with:
-          password: ${{ secrets.PYPI_API_TOKEN }}
+          user: Vijaik
+          password: ${{ secrets.PYPI_API_TOKEN }}   
+          skip_existing: true
