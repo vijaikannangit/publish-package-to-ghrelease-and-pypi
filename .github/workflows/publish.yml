@@ -18,5 +18,5 @@ jobs:
         uses: pypa/gh-action-pypi-publish@release/v1
         with:
           user: Vijaik
-          password: ${{ secrets.PYPI_API_TOKEN }}   
-          skip_existing: true
+          password: ${{ secrets.RELE-VER-PYPI-API-TOKEN }}   
+          #skip_existing: true
