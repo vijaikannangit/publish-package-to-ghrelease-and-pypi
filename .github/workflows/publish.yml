@@ -28,7 +28,7 @@ jobs:
       - name: Publish distribution(package) to PyPI
         uses: pypa/gh-action-pypi-publish@release/v1
         with:
-          #user: Vijaik
+          user: Vijaik
           password: ${{ secrets.RELE_VER_PYPI_API_TOKEN }}   
           skip-existing: true
 
