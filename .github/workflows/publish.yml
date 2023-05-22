@@ -29,7 +29,7 @@ jobs:
           python -m build
 
       - name: Build the dist files
-         run: python setup.py sdist bdist_wheel
+        run: python setup.py sdist bdist_wheel
  
       - name: Publish distribution(package) to PyPI
         uses: pypa/gh-action-pypi-publish@release/v1
